@@ -1,0 +1,58 @@
+{
+  "version": 1,
+  "_comment": "Source of truth for sage-tools-api's sync registry — fetched at runtime by SyncConfigStore, cached for SYNC_CONFIG_TTL_MS (default ~1 minute). See README.md in this folder for the shape/validation rules before editing by hand.",
+  "defaults": {
+    "matchesSheetName": "CSV",
+    "standingsSheetName": "STANDINGSCSV",
+    "csvGid": "2136121736",
+    "standingsGid": "1507029786"
+  },
+  "events": {
+    "bkl-cup-2026": {
+      "_comment": "Ended Aug 2026. Once GITHUB_REPO points at the shared event-data repo, a resync of any of these days publishes to event-data/bkl-cup-2026/data/..., which is NOT where the archived bkl-cup-2026 pages on the site read from — their live data simply stops updating. Harmless (nothing triggers a resync of a finished event), but that's why: don't treat a 'stale' archived bkl page as a bug, and don't re-point GITHUB_REPO back to fix it.",
+      "days": {
+        "day2": {
+          "_comment": "SCHEDULE CHANGE: Day 1 (Aug 14) was cancelled — the event ran Aug 15-16 and 21-23 instead. These entries keep their original day2-day6 keys (so already-published data and each facility spreadsheet's DAY_KEY didn't need to change) — only the user-facing label was renumbered.",
+          "label": "Day 1 · Aug 15",
+          "facilities": [
+            { "name": "Main", "sheetId": "1hbjqbH3H1Z-iLVgQpztwxw_mTKQ6UsvAsOo_cx6cXuM" },
+            { "name": "Annex", "sheetId": "1n6VKx8dDbbDNcCbP4RtizwSO4MRQ-PCTsYaOK4vNuy4" },
+            { "name": "Dreamcourts", "sheetId": "1_lakEi5whN4ZvssaIDfnUA8AWM5huIU8mWV55dCxIsE" }
+          ]
+        },
+        "day3": {
+          "label": "Day 2 · Aug 16",
+          "facilities": [
+            { "name": "Main", "sheetId": "1resKkD3e8kjxJEcQkruzKW8N93NFjuqgtmD9_hwYHQs" },
+            { "name": "Annex", "sheetId": "1KCjXMnxnA-0x7eh5e-t_IdfSIypUnNKfTHwTaZjd1mc" },
+            { "name": "Dreamcourts", "sheetId": "1H5aHgogxauIgbb3xoBSuLQjVZCCdZcI_9iBXUMp_9SI" }
+          ]
+        },
+        "day4": {
+          "label": "Day 3 · Aug 21",
+          "facilities": [
+            { "name": "Main", "sheetId": "1WnkP8P9UoykBBMsQ56pPxOBH5FBQxaRjg_44DvdoTF8" },
+            { "name": "Annex", "sheetId": "1eYwjJk4aaW7nBXe_r-0A2KtrIq-iAsum0p9XyNt7AFE" },
+            { "name": "Dreamcourts", "sheetId": "11ru3OPXzXGoex3Vbl8rIeP0ifhRh3oR_pkpT7ZTCwbo" }
+          ]
+        },
+        "day5": {
+          "label": "Day 4 · Aug 22",
+          "facilities": [
+            { "name": "Main", "sheetId": "1pMjMHafVSSb-vVfjigDPuLg-jI9IbQ_xuUV9uNFjgGE" },
+            { "name": "Annex", "sheetId": "1Q_QEAv-CY0nwCZIgypOK8yAcvee9HaXc14NDPOVqHt4" },
+            { "name": "Dreamcourts", "sheetId": "11fqzDNQ826cVXyCUTU8SkSDmYcF7M-m-ZsP5QT2lEO4" }
+          ]
+        },
+        "day6": {
+          "label": "Day 5 · Aug 23",
+          "facilities": [
+            { "name": "Main", "sheetId": "14EQ5KRIjKeOgy2p_CR-U-rs4iIpn280TlY2rOCj_vLQ" },
+            { "name": "Annex", "sheetId": "1loo3hHXtwSvc35F0rRAPJRcU_xqinE1BSjFY6GtYqWo" },
+            { "name": "Dreamcourts", "sheetId": "17uU-6px2UDULiGNgSvNaV8GsZCen8pwkXwXYHpKNneA" }
+          ]
+        }
+      }
+    }
+  }
+}
