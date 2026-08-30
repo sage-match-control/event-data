@@ -19,9 +19,7 @@ This file documents the schema itself.
   "version": 1,
   "defaults": {
     "matchesSheetName": "CSV",
-    "standingsSheetName": "STANDINGSCSV",
-    "csvGid": "2136121736",
-    "standingsGid": "1507029786"
+    "standingsSheetName": "STANDINGSCSV"
   },
   "events": {
     "<event-key>": {
@@ -43,7 +41,7 @@ This file documents the schema itself.
   silently mis-parsing a future shape change.
 - `defaults` — optional. Anything it omits falls back to an in-code default
   in `sage-tools-api` (the values shown above are those defaults). Only set
-  this if most days need the same non-default tab names/GIDs.
+  this if most days need the same non-default tab names.
 - `events.<event-key>` — one entry per event. The key must match this
   event's folder name under `events/` in `sage-match-control.github.io` **and**
   its folder name in this repo (`<event-key>/data/...`).
@@ -53,10 +51,21 @@ This file documents the schema itself.
     empty/missing `sheetId` is treated as "not set up yet" and skipped rather
     than fetched — useful for adding a day's entry before its spreadsheet
     exists.
-  - Optionally override any of `matchesSheetName`, `standingsSheetName`,
-    `csvGid`, `standingsGid` for just this day, if its spreadsheet's tabs
-    don't match `defaults` (or the in-code defaults). The PPA dual-meet event
-    needed this — its standings tab used a different GID than bkl's.
+  - Optionally override `matchesSheetName` and/or `standingsSheetName` for
+    just this day, if its spreadsheet's tabs are literally named something
+    other than `CSV`/`STANDINGSCSV`.
+
+    > **There is deliberately no GID equivalent of these fields.** Both
+    > `sage-tools-api` fetch paths address tabs by name, never by numeric
+    > GID. A GID is assigned per-workbook, so a value correct for one
+    > event's spreadsheet can point at a completely different tab in
+    > another — this actually happened: `pnf-x-bup-dual-meet`'s workbook was
+    > duplicated from the archived `ppa-x-club-2600-dual-meet` sheet and
+    > inherited its old tabs' GIDs, so the shared default `standingsGid`
+    > (back when that field existed) silently resolved to a leftover tab
+    > from the old event instead of the real `STANDINGSCSV` tab — with no
+    > error, just wrong data. A tab *name* doesn't carry that risk across
+    > workbooks.
 - A `"_comment"` string key is allowed anywhere in the tree (on the root
   object, an event, or a day) for notes that would otherwise have no home in
   JSON. It's ignored by validation and by `sage-tools-api`.

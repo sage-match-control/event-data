@@ -3,9 +3,7 @@
   "_comment": "Source of truth for sage-tools-api's sync registry — fetched at runtime by SyncConfigStore, cached for SYNC_CONFIG_TTL_MS (default ~1 minute). See README.md in this folder for the shape/validation rules before editing by hand.",
   "defaults": {
     "matchesSheetName": "CSV",
-    "standingsSheetName": "STANDINGSCSV",
-    "csvGid": "2136121736",
-    "standingsGid": "1507029786"
+    "standingsSheetName": "STANDINGSCSV"
   },
   "events": {
     "bkl-cup-2026": {
@@ -50,6 +48,17 @@
             { "name": "Main", "sheetId": "14EQ5KRIjKeOgy2p_CR-U-rs4iIpn280TlY2rOCj_vLQ" },
             { "name": "Annex", "sheetId": "1loo3hHXtwSvc35F0rRAPJRcU_xqinE1BSjFY6GtYqWo" },
             { "name": "Dreamcourts", "sheetId": "17uU-6px2UDULiGNgSvNaV8GsZCen8pwkXwXYHpKNneA" }
+          ]
+        }
+      }
+    },
+    "pnf-x-bup-dual-meet": {
+      "days": {
+        "pnf-x-bup-day1": {
+          "_comment": "This sheet's STANDINGSCSV tab happens to sit at gid 1801965166 — a different gid resolves to a leftover tab, apparently because this workbook was duplicated from the archived ppa-x-club-2600-dual-meet sheet and inherited its old tab gids. Harmless now: both fetch paths address tabs by name (see GvizCsvFetcher.mjs), so this quirk never mattered once that changed. Left as a note in case the workbook's gids come up again.",
+          "label": "Sep 12",
+          "facilities": [
+            { "name": "Pampanga Pickleball Center", "sheetId": "1IcnsOEA5iGljEmh6Z0ChhIYn580MZ9mzpVEZY55pX0U" }
           ]
         }
       }
