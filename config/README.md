@@ -23,13 +23,23 @@ This file documents the schema itself.
   },
   "events": {
     "<event-key>": {
+      "type": "dual-meet",
+      "archived": false,
+      "title": "PNF × BUP Dual Meet",
       "days": {
         "<day-key>": {
           "label": "Day 1 · Aug 15",
+          "date": "2026-08-15",
+          "isLive": "auto",
           "facilities": [
             { "name": "Main", "sheetId": "1hbjqbH3H1..." }
           ]
         }
+      },
+      "display": {
+        "divisions": { "LI": "Low Intermediate" },
+        "events": { "MD": "Men's Doubles" },
+        "clubs": { "PNF": "Pickle & Friends Community" }
       }
     }
   }
@@ -45,8 +55,35 @@ This file documents the schema itself.
 - `events.<event-key>` — one entry per event. The key must match this
   event's folder name under `events/` in `sage-match-control.github.io` **and**
   its folder name in this repo (`<event-key>/data/...`).
+  - `type` — `"dual-meet"` or `"standard"`. Read only by the Match Control
+    console (`tools/match-control.html`) — `sage-tools-api` never looks at
+    it. Picks both the standings layout and how team codes split
+    (`<CLUB>_<DIV><EVT>_<REST>` vs `<DIV><EVT>_<REST>`). Not validated here
+    (the console shows its own visible error for a missing/unrecognized
+    value rather than guessing) — see
+    `sage-match-control.github.io/specs/match-control-console-spec.md`.
+  - `archived` — optional, console-only. `true` hides the event from the
+    console's event picker entirely. Omit or set `false` for a live event.
+  - `title` — optional, console-only. Shown as the console's masthead label
+    once this event is selected.
+  - `display` — optional, console-only: `{ divisions, events, clubs }`, each
+    a plain `code → label` map (e.g. `"LI": "Low Intermediate"`). Without it
+    the console still works, showing raw codes. Order comes from each map's
+    own key order. `clubs` has no logo field — the console never renders
+    club logos.
 - `events.<event-key>.days.<day-key>` — one entry per tournament day.
   - `label` — required, shown in error messages and diagnostics.
+  - `date` — optional (`YYYY-MM-DD`), console-only. Lets the console order
+    days chronologically and default to the current one.
+  - `isLive` — optional, one of `true`, `false`, or the literal string
+    `"auto"`. Any other value fails validation the same as a structural
+    error (whole file rejected, last-known-good config kept serving). Absent
+    is treated the same as `"auto"`. This is the Match Control console's
+    go-live override (`POST /sync/:day/live`, secret-gated): every sync
+    stamps the day's current value into its published snapshot alongside
+    `label`, and the override endpoint writes here first, then immediately
+    republishes that snapshot — so a later real sync can never silently
+    revert an operator's override, since it re-reads this file every time.
   - `facilities` — required array of `{ name, sheetId }`. A facility with an
     empty/missing `sheetId` is treated as "not set up yet" and skipped rather
     than fetched — useful for adding a day's entry before its spreadsheet
@@ -90,6 +127,9 @@ broken commit or crashing:
 - Each day needs a non-empty `label` and a `facilities` array (it can be
   empty, e.g. before spreadsheets exist for it — but the key must be
   present).
+- A day's `isLive`, if present, must be `true`, `false`, or the literal
+  string `"auto"` — anything else fails validation the same as a structural
+  error.
 - Facility names must be unique within a day.
 - The file needs at least one event, and each event needs at least one day.
 

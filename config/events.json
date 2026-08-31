@@ -8,6 +8,7 @@
   "events": {
     "bkl-cup-2026": {
       "_comment": "Ended Aug 2026. Once GITHUB_REPO points at the shared event-data repo, a resync of any of these days publishes to event-data/bkl-cup-2026/data/..., which is NOT where the archived bkl-cup-2026 pages on the site read from — their live data simply stops updating. Harmless (nothing triggers a resync of a finished event), but that's why: don't treat a 'stale' archived bkl page as a bug, and don't re-point GITHUB_REPO back to fix it.",
+      "archived": true,
       "days": {
         "day2": {
           "_comment": "SCHEDULE CHANGE: Day 1 (Aug 14) was cancelled — the event ran Aug 15-16 and 21-23 instead. These entries keep their original day2-day6 keys (so already-published data and each facility spreadsheet's DAY_KEY didn't need to change) — only the user-facing label was renumbered.",
@@ -53,14 +54,23 @@
       }
     },
     "pnf-x-bup-dual-meet": {
+      "type": "dual-meet",
+      "title": "PNF × BUP Dual Meet",
       "days": {
         "pnf-x-bup-day1": {
           "_comment": "This sheet's STANDINGSCSV tab happens to sit at gid 1801965166 — a different gid resolves to a leftover tab, apparently because this workbook was duplicated from the archived ppa-x-club-2600-dual-meet sheet and inherited its old tab gids. Harmless now: both fetch paths address tabs by name (see GvizCsvFetcher.mjs), so this quirk never mattered once that changed. Left as a note in case the workbook's gids come up again.",
           "label": "Sep 12",
+          "date": "2026-09-12",
+          "isLive": "auto",
           "facilities": [
             { "name": "Pampanga Pickleball Center", "sheetId": "1IcnsOEA5iGljEmh6Z0ChhIYn580MZ9mzpVEZY55pX0U" }
           ]
         }
+      },
+      "display": {
+        "divisions": { "LI": "Low Intermediate", "HI": "High Intermediate", "A": "Advanced" },
+        "events": { "WD": "Women's Doubles", "MD": "Men's Doubles", "XD": "Mixed Doubles" },
+        "clubs": { "PNF": "Pickle & Friends Community", "BUP": "1Bataan United Picklers" }
       }
     }
   }
