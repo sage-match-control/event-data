@@ -55,8 +55,8 @@ This file documents the schema itself.
 - `events.<event-key>` — one entry per event. The key must match this
   event's folder name under `events/` in `sage-match-control.github.io` **and**
   its folder name in this repo (`<event-key>/data/...`).
-  - `type` — `"dual-meet"` or `"standard"`. Read only by the Match Control
-    console (`tools/match-control.html`) — `sage-tools-api` never looks at
+  - `type` — `"dual-meet"` or `"standard"`. Read only by Control Center
+    (`tools/control-center.html`) — `sage-tools-api` never looks at
     it. Picks both the standings layout and how team codes split
     (`<CLUB>_<DIV><EVT>_<REST>` vs `<DIV><EVT>_<REST>`). Not validated here
     (the console shows its own visible error for a missing/unrecognized
@@ -78,7 +78,7 @@ This file documents the schema itself.
   - `isLive` — optional, one of `true`, `false`, or the literal string
     `"auto"`. Any other value fails validation the same as a structural
     error (whole file rejected, last-known-good config kept serving). Absent
-    is treated the same as `"auto"`. This is the Match Control console's
+    is treated the same as `"auto"`. This is Control Center's
     go-live override (`POST /sync/:day/live`, secret-gated): every sync
     stamps the day's current value into its published snapshot alongside
     `label`, and the override endpoint writes here first, then immediately
