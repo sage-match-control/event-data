@@ -1,7 +1,7 @@
 {
   "day": "pnf-x-bup-day1",
   "label": "Sep 12",
-  "isLive": true,
+  "isLive": "auto",
   "generatedAt": "2026-09-02T06:10:05.927Z",
   "facilities": [
     {
