@@ -61,7 +61,7 @@ This file documents the schema itself.
     (`<CLUB>_<DIV><EVT>_<REST>` vs `<DIV><EVT>_<REST>`). Not validated here
     (the console shows its own visible error for a missing/unrecognized
     value rather than guessing) — see
-    `sage-match-control.github.io/specs/match-control-console-spec.md`.
+    `sage-docs/specs/match-control-console-spec.md`.
   - `archived` — optional, console-only. `true` hides the event from the
     console's event picker entirely. Omit or set `false` for a live event.
   - `title` — optional, console-only. Shown as the console's masthead label
