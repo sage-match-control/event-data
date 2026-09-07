@@ -106,7 +106,7 @@
           "_comment": "This sheet's STANDINGSCSV tab happens to sit at gid 1801965166 — a different gid resolves to a leftover tab, apparently because this workbook was duplicated from the archived ppa-x-club-2600-dual-meet sheet and inherited its old tab gids. Harmless now: both fetch paths address tabs by name (see GvizCsvFetcher.mjs), so this quirk never mattered once that changed. Left as a note in case the workbook's gids come up again.",
           "label": "Sep 12",
           "date": "2026-09-12",
-          "isLive": "auto",
+          "isLive": true,
           "facilities": [
             {
               "name": "Pampanga Pickleball Center",
