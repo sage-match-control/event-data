@@ -139,16 +139,30 @@
         "pickle-for-sight-day1": {
           "label": "Sep 27",
           "date": "2026-09-27",
-          "isLive": "auto",
+          "isLive": true,
           "facilities": [
-            { "name": "PCPH Main",  "sheetId": "1rNIlK2Zz3zTaLILlpq4rCGIQbtr0ECpG4A3OdP4v25A" },
-            { "name": "PCPH Annex", "sheetId": "1ks84WK7vo5FAenpPbZocm9PLPpLoS6_SRPivVJqmS-0" }
+            {
+              "name": "PCPH Main",
+              "sheetId": "1rNIlK2Zz3zTaLILlpq4rCGIQbtr0ECpG4A3OdP4v25A"
+            },
+            {
+              "name": "PCPH Annex",
+              "sheetId": "1ks84WK7vo5FAenpPbZocm9PLPpLoS6_SRPivVJqmS-0"
+            }
           ]
         }
       },
       "display": {
-        "divisions": { "N": "Novice", "LI": "Low Intermediate", "HI": "High Intermediate" },
-        "events":    { "MD": "Men's Doubles", "WD": "Women's Doubles", "XD": "Mixed Doubles" }
+        "divisions": {
+          "N": "Novice",
+          "LI": "Low Intermediate",
+          "HI": "High Intermediate"
+        },
+        "events": {
+          "MD": "Men's Doubles",
+          "WD": "Women's Doubles",
+          "XD": "Mixed Doubles"
+        }
       }
     }
   }
