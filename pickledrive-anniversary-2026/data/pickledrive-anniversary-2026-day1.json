@@ -1,7 +1,7 @@
 {
   "day": "pickledrive-anniversary-2026-day1",
   "label": "Oct 3",
-  "isLive": "auto",
+  "isLive": true,
   "generatedAt": "2026-09-28T18:40:15.531Z",
   "facilities": [
     {
