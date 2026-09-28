@@ -55,13 +55,15 @@ This file documents the schema itself.
 - `events.<event-key>` — one entry per event. The key must match this
   event's folder name under `events/` in `sage-match-control.github.io` **and**
   its folder name in this repo (`<event-key>/data/...`).
-  - `type` — `"dual-meet"` or `"standard"`. Read only by Control Center
+  - `type` — `"dual-meet"`, `"standard"` or `"team"`. Read only by Control Center
     (`tools/control-center.html`) — `sage-tools-api` never looks at
     it. Picks both the standings layout and how team codes split
     (`<CLUB>_<DIV><EVT>_<REST>` vs `<DIV><EVT>_<REST>`). Not validated here
     (the console shows its own visible error for a missing/unrecognized
     value rather than guessing) — see
     `sage-docs/docs/specs/.../match-control-console-spec.md`.
+  - A `"team"` event takes its team names from `STANDINGSCSV` and needs no
+    `display` block.
   - `archived` — optional, console-only. `true` hides the event from the
     console's event picker entirely. Omit or set `false` for a live event.
   - `title` — optional, console-only. Shown as the console's masthead label
