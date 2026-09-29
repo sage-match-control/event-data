@@ -1,7 +1,7 @@
 {
   "day": "piggleball-day1",
   "label": "Oct 3",
-  "isLive": "auto",
+  "isLive": true,
   "generatedAt": "2026-09-29T16:29:19.282Z",
   "facilities": [
     {
