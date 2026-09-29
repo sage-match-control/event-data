@@ -181,6 +181,34 @@
           ]
         }
       }
+    },
+    "piggleball-2026": {
+      "type": "standard",
+      "title": "Piggleball Chairman's Cup",
+      "days": {
+        "piggleball-day1": {
+          "label": "Oct 3",
+          "date": "2026-10-03",
+          "isLive": "auto",
+          "facilities": [
+            {
+              "name": "Centro Atletico",
+              "sheetId": "1QX38GVquZjsha24BLJkx7tTWxc09sc6oWW99ALUsegE"
+            }
+          ]
+        }
+      },
+      "display": {
+        "divisions": {
+          "N": "Novice",
+          "I": "Intermediate"
+        },
+        "events": {
+          "D": "Genderless Doubles",
+          "MD": "Men's Doubles",
+          "XD": "Mixed Doubles"
+        }
+      }
     }
   }
 }
