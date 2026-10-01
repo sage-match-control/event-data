@@ -26,6 +26,7 @@ This file documents the schema itself.
       "type": "dual-meet",
       "archived": false,
       "title": "PNF × BUP Dual Meet",
+      "attendance": "desks",
       "days": {
         "<day-key>": {
           "label": "Day 1 · Aug 15",
@@ -71,6 +72,10 @@ This file documents the schema itself.
     `sage-docs/docs/specs/.../match-control-console-spec.md`.
   - A `"team"` event takes its team names from `STANDINGSCSV` and needs no
     `display` block.
+  - `attendance` — optional, `"console"` or `"desks"`. Turns on staff attendance for the event:
+    `"console"` lets operators mark people in Control Center, `"desks"` also
+    allows desk links (a day needs a `date` for that). Anything else fails
+    validation in `sage-tools-api`. Absent means no attendance.
   - `archived` — optional, console-only. `true` hides the event from the
     console's event picker entirely. Omit or set `false` for a live event.
   - `title` — optional, console-only. Shown as the console's masthead label
