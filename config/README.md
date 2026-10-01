@@ -49,6 +49,13 @@ This file documents the schema itself.
 - `version` — must be `1`. `sage-tools-api` checks this and refuses the file
   (falling back to its last-known-good copy) if it doesn't match, rather than
   silently mis-parsing a future shape change.
+- `livePush` — optional boolean, the operator's switch for live push (see
+  `sage-tools-api`'s live push). `false` makes every sync, and Live/Hide,
+  publish to GitHub alone; absent or `true` leaves live push to Cloud Run's
+  environment (`LIVE_PUSH_URL`). Normally written by Control Center's
+  **Sync method** switch rather than by hand, and takes effect within
+  `SYNC_CONFIG_TTL_MS`. A value that isn't a boolean makes the whole file
+  invalid.
 - `defaults` — optional. Anything it omits falls back to an in-code default
   in `sage-tools-api` (the values shown above are those defaults). Only set
   this if most days need the same non-default tab names.
