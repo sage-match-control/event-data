@@ -1,9 +1,9 @@
 {
   "day": "piggleball-day1",
   "label": "Oct 3",
-  "isLive": "auto",
+  "isLive": true,
   "generatedAt": "2026-10-01T19:24:56.165Z",
-  "publishedAt": "2026-10-01T19:25:29.782Z",
+  "publishedAt": "2026-10-01T19:33:36.990Z",
   "facilities": [
     {
       "name": "Centro Atletico",
