@@ -185,6 +185,7 @@
     "piggleball-2026": {
       "type": "standard",
       "title": "Piggleball Chairman's Cup",
+      "attendance": "console",
       "days": {
         "piggleball-day1": {
           "label": "Oct 3",
