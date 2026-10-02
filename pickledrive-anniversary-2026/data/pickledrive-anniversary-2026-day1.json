@@ -1,9 +1,9 @@
 {
   "day": "pickledrive-anniversary-2026-day1",
   "label": "Oct 3",
-  "isLive": true,
+  "isLive": "auto",
   "generatedAt": "2026-10-02T14:25:59.918Z",
-  "publishedAt": "2026-10-02T14:29:40.431Z",
+  "publishedAt": "2026-10-02T14:38:11.644Z",
   "facilities": [
     {
       "name": "Kingcourts",
