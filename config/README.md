@@ -104,7 +104,9 @@ This file documents the schema itself.
     exists.
   - Optionally override `matchesSheetName` and/or `standingsSheetName` for
     just this day, if its spreadsheet's tabs are literally named something
-    other than `CSV`/`STANDINGSCSV`.
+    other than `CSV`/`STANDINGSCSV`. A `"team"` event's day can likewise set
+    `rosterSheetName` (default `Teams`), the tab whose roster is published as
+    `rosterCsv`; it must be a non-empty string.
 
     > **There is deliberately no GID equivalent of these fields.** Both
     > `sage-tools-api` fetch paths address tabs by name, never by numeric
