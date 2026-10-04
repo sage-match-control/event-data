@@ -188,7 +188,7 @@
       "type": "standard",
       "title": "Piggleball Chairman's Cup",
       "attendance": "desks",
-      "scoreEntry": "links",
+      "scoreEntry": "console",
       "days": {
         "piggleball-day1": {
           "label": "Oct 3",
