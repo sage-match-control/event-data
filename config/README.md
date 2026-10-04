@@ -27,6 +27,7 @@ This file documents the schema itself.
       "archived": false,
       "title": "PNF × BUP Dual Meet",
       "attendance": "desks",
+      "scoreEntry": "links",
       "days": {
         "<day-key>": {
           "label": "Day 1 · Aug 15",
@@ -76,6 +77,17 @@ This file documents the schema itself.
     `"console"` lets operators mark people in Control Center, `"desks"` also
     allows desk links (a day needs a `date` for that). Anything else fails
     validation in `sage-tools-api`. Absent means no attendance.
+  - `scoreEntry` — optional, `"console"` or `"links"`. Turns on entering a match's
+    score from Control Center and the API: `"console"` lets signed-in operators
+    do it in Match Finder, `"links"` also allows scorer links (issued for a day until
+    06:00 Manila the morning after its `date`; a day without a `date` is never
+    over). Absent
+    means off; anything else fails validation in `sage-tools-api`. Mission
+    Control's **Scorer links** switch moves an event between `"links"` and
+    `"console"` by editing this value; it never turns score entry on or off, so
+    adding the setting is a commit here. Every facility workbook of the event
+    must be shared with the API's service account as **Editor**, or saving a
+    score fails with a message naming the account.
   - `archived` — optional, console-only. `true` hides the event from the
     console's event picker entirely. Omit or set `false` for a live event.
   - `title` — optional, console-only. Shown as the console's masthead label
