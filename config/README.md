@@ -1,8 +1,8 @@
 # `config/events.json`
 
 This is the live event/day/facility registry for `sage-tools-api`'s sync
-feature. It replaced the old hardcoded `EVENTS` const in that repo's
-`src/sync/SyncConfig.mjs` — editing this file (and committing it, on `main`)
+feature, which `src/registry/SyncConfigStore.mjs` fetches and caches. It replaced
+the old hardcoded `EVENTS` const in that repo's sync code — editing this file (and committing it, on `main`)
 is now how you add an event, add a day, or fix a wrong sheet ID. **No
 redeploy of `sage-tools-api` is needed** for a change here to take effect;
 every running instance re-checks this file roughly once a minute (see
