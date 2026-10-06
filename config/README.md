@@ -101,6 +101,14 @@ This file documents the schema itself.
     event pages' Tournament Hubs read it. Without it they still work, showing
     raw codes. Order comes from each map's own key order. `clubs` has no logo
     field — a dual meet's logos are in its Hub page's `CLUB_LOGOS`.
+    A **team** event adds `pairs` (team events only): the label of each
+    pair in a matchup, `{ "<pair number>": { "full", "short" } }`, e.g.
+    `"1": { "full": "Men's Doubles", "short": "MD" }`. The key is the pair
+    number in a team code (the `3` of `A_3`); both labels are non-empty
+    strings. A type that repeats is numbered ("XD 1", "XD 2"). Without `pairs`
+    the labels are MD, WD, XD 1 and XD 2; a malformed `pairs` falls back to
+    those too, with a console warning on the page. The Hub, board, scorer
+    page and Control Center read it; `sage-tools-api` does not.
 - `events.<event-key>.days.<day-key>` — one entry per tournament day.
   - `label` — required, shown in error messages and diagnostics.
   - `date` — optional (`YYYY-MM-DD`), console-only. Lets the console order
