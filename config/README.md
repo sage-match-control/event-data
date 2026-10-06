@@ -90,13 +90,17 @@ This file documents the schema itself.
     score fails with a message naming the account.
   - `archived` — optional, console-only. `true` hides the event from the
     console's event picker entirely. Omit or set `false` for a live event.
-  - `title` — optional, console-only. Shown as the console's masthead label
-    once this event is selected.
-  - `display` — optional, console-only: `{ divisions, events, clubs }`, each
-    a plain `code → label` map (e.g. `"LI": "Low Intermediate"`). Without it
-    the console still works, showing raw codes. Order comes from each map's
-    own key order. `clubs` has no logo field — the console never renders
-    club logos.
+    **An event stays in this file for as long as any page built on the site
+    engine shows it** (its Tournament Hub, schedule board, scorer page or
+    desk page, which read it too): removing a finished event's entry blanks
+    those pages. `archived` is how to hide a finished event from the console.
+  - `title` — optional. Shown as the console's masthead label once this event
+    is selected.
+  - `display` — optional: `{ divisions, events, clubs }`, each a plain
+    `code → label` map (e.g. `"LI": "Low Intermediate"`). Control Center and the
+    event pages' Tournament Hubs read it. Without it they still work, showing
+    raw codes. Order comes from each map's own key order. `clubs` has no logo
+    field — a dual meet's logos are in its Hub page's `CLUB_LOGOS`.
 - `events.<event-key>.days.<day-key>` — one entry per tournament day.
   - `label` — required, shown in error messages and diagnostics.
   - `date` — optional (`YYYY-MM-DD`), console-only. Lets the console order
