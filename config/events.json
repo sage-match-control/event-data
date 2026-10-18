@@ -234,6 +234,7 @@
         }
       },
       "display": {
+        "teamColors": { "Red": "#D55E00", "Orange": "#E69F00", "Yellow": "#F0E442", "Green": "#009E73", "Blue": "#0072B2", "Purple": "#6F3FA0", "Sky": "#56B4E9", "Pink": "#CC79A7" },
         "pairs": {
           "1": {
             "full": "Men's Doubles",

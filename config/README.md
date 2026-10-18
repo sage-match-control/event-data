@@ -109,6 +109,16 @@ This file documents the schema itself.
     the labels are MD, WD, XD 1 and XD 2; a malformed `pairs` falls back to
     those too, with a console warning on the page. The Hub, board, scorer
     page and Control Center read it; `sage-tools-api` does not.
+    A team event may also add `teamColors`: each team's colour,
+    `{ "<team code>": "<hex colour>" }`, keyed by the group-stage team code
+    (`"Red": "#D55E00"`). Only `#RGB` and `#RRGGBB` values are used; any
+    other value is dropped with a console warning on the page. Each coloured
+    team gets a mark, its colour on a shape of its own, before its name
+    wherever the name appears (a playoff side once its team is typed into the
+    slot), and its cards shade between the two teams' colours. The shapes
+    follow the map's order (circle, square, triangle, diamond, star, hexagon,
+    plus, upside-down triangle), so **reordering the keys changes the shapes**.
+    The Hub, board and Control Center read it; `sage-tools-api` does not.
 - `events.<event-key>.teamScoring` — optional, team events only: `"points"`
   (the default) or `"games"`. `"points"` decides a matchup on total points and
   ranks a bracket on points scored. `"games"` decides a matchup on matches won,
