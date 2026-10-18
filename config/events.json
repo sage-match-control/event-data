@@ -224,7 +224,7 @@
         "millennium-invitational-2026-day1": {
           "label": "Oct 24",
           "date": "2026-10-24",
-          "isLive": "auto",
+          "isLive": true,
           "facilities": [
             {
               "name": "Plus 63",
@@ -235,10 +235,22 @@
       },
       "display": {
         "pairs": {
-          "1": { "full": "Men's Doubles",   "short": "MD" },
-          "2": { "full": "Men's Doubles",   "short": "MD" },
-          "3": { "full": "Women's Doubles", "short": "WD" },
-          "4": { "full": "Mixed Doubles",   "short": "XD" }
+          "1": {
+            "full": "Men's Doubles",
+            "short": "MD"
+          },
+          "2": {
+            "full": "Men's Doubles",
+            "short": "MD"
+          },
+          "3": {
+            "full": "Women's Doubles",
+            "short": "WD"
+          },
+          "4": {
+            "full": "Mixed Doubles",
+            "short": "XD"
+          }
         }
       }
     }
