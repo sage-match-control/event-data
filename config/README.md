@@ -109,6 +109,13 @@ This file documents the schema itself.
     the labels are MD, WD, XD 1 and XD 2; a malformed `pairs` falls back to
     those too, with a console warning on the page. The Hub, board, scorer
     page and Control Center read it; `sage-tools-api` does not.
+- `events.<event-key>.teamScoring` — optional, team events only: `"points"`
+  (the default) or `"games"`. `"points"` decides a matchup on total points and
+  ranks a bracket on points scored. `"games"` decides a matchup on matches won,
+  then total points, and ranks a bracket on matches won, total points,
+  head-to-head wins and head-to-head points. Any other value reads as
+  `"points"`, with a console warning on the page. The Hub, board and Control
+  Center (including its Awards podium) read it; `sage-tools-api` does not.
 - `events.<event-key>.days.<day-key>` — one entry per tournament day.
   - `label` — required, shown in error messages and diagnostics.
   - `date` — optional (`YYYY-MM-DD`), console-only. Lets the console order
