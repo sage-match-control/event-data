@@ -213,6 +213,34 @@
           "XD": "Mixed Doubles"
         }
       }
+    },
+    "millennium-invitational-2026": {
+      "type": "team",
+      "title": "Millennium Pickleball Club",
+      "teamScoring": "games",
+      "attendance": "desks",
+      "scoreEntry": "links",
+      "days": {
+        "millennium-invitational-2026-day1": {
+          "label": "Oct 24",
+          "date": "2026-10-24",
+          "isLive": "auto",
+          "facilities": [
+            {
+              "name": "Plus 63",
+              "sheetId": "1ulbHdH5iU5lNm6fqpvbbvxfdht-cMvjGrtoZaN8ru6k"
+            }
+          ]
+        }
+      },
+      "display": {
+        "pairs": {
+          "1": { "full": "Men's Doubles",   "short": "MD" },
+          "2": { "full": "Men's Doubles",   "short": "MD" },
+          "3": { "full": "Women's Doubles", "short": "WD" },
+          "4": { "full": "Mixed Doubles",   "short": "XD" }
+        }
+      }
     }
   }
 }
