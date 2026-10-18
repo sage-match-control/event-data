@@ -1,9 +1,9 @@
 {
   "day": "millennium-invitational-2026-day1",
   "label": "Oct 24",
-  "isLive": "auto",
+  "isLive": true,
   "generatedAt": "2026-10-18T17:05:41.574Z",
-  "publishedAt": "2026-10-18T17:05:42.530Z",
+  "publishedAt": "2026-10-18T17:09:27.056Z",
   "facilities": [
     {
       "name": "Plus 63",
