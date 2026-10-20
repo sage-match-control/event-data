@@ -236,6 +236,7 @@
       },
       "display": {
         "teamColors": { "Red": "#D55E00", "Orange": "#E69F00", "Yellow": "#F0E442", "Green": "#009E73", "Blue": "#0072B2", "White": "#B8B8B8", "Teal": "#00A3B4", "Pink": "#CC79A7" },
+        "seedLabels": { "Fi-1": "Rank 1", "Fi-2": "Rank 2", "Br-1": "Rank 3", "Br-2": "Rank 4" },
         "pairs": {
           "1": { "full": "Men's High", "short": "MH" },
           "2": { "full": "Mixed Doubles", "short": "XD" },

@@ -119,6 +119,10 @@ This file documents the schema itself.
     follow the map's order (circle, square, triangle, diamond, star, hexagon,
     plus, upside-down triangle), so **reordering the keys changes the shapes**.
     The Hub, board and Control Center read it; `sage-tools-api` does not.
+    A team event may also add `seedLabels`: the placeholder each playoff
+    side shows until its team is typed in, `{ "<playoff side>": "<label>" }`
+    (`"Br-1": "Rank 3"` reads "Rank 3 · TBD"). A side the map lacks reads
+    "Seed <n> · TBD". The Hub, board and scorer page read it.
 - `events.<event-key>.teamScoring` — optional, team events only: `"points"`
   (the default) or `"games"`. `"points"` decides a matchup on total points and
   ranks a bracket on points scored. `"games"` decides a matchup on matches won,
