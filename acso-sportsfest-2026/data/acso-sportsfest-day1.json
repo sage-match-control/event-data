@@ -1,9 +1,9 @@
 {
   "day": "acso-sportsfest-day1",
   "label": "Nov 13",
-  "isLive": "auto",
+  "isLive": true,
   "generatedAt": "2026-10-20T23:35:01.807Z",
-  "publishedAt": "2026-10-20T23:35:02.170Z",
+  "publishedAt": "2026-10-20T23:35:46.217Z",
   "facilities": [
     {
       "name": "Pickle Place",
