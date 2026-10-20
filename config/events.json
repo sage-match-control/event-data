@@ -219,7 +219,24 @@
       "title": "Millennium Pickleball Club 2nd Invitational Tournament",
       "teamScoring": "games",
       "lineupReveal": true,
-      "lineupRules": { "pairs": { "1": "mens-high", "2": "mixed", "3": "womens", "4": "open" }, "advancedLevels": ["H2A", "HI"], "captainNotMixed": true, "allowed": { "Gian": ["womens"] } },
+      "lineupRules": {
+        "pairs": {
+          "1": "mens-high",
+          "2": "mixed",
+          "3": "womens",
+          "4": "open"
+        },
+        "advancedLevels": [
+          "H2A",
+          "HI"
+        ],
+        "captainNotMixed": true,
+        "allowed": {
+          "Gian": [
+            "womens"
+          ]
+        }
+      },
       "attendance": "desks",
       "scoreEntry": "links",
       "days": {
@@ -236,13 +253,39 @@
         }
       },
       "display": {
-        "teamColors": { "Red": "#D55E00", "Orange": "#E69F00", "Yellow": "#F0E442", "Green": "#009E73", "Blue": "#0072B2", "White": "#B8B8B8", "Teal": "#00A3B4", "Pink": "#CC79A7" },
-        "seedLabels": { "Fi-1": "Rank 1", "Fi-2": "Rank 2", "Br-1": "Rank 3", "Br-2": "Rank 4" },
+        "teamColors": {
+          "Red": "#D55E00",
+          "Orange": "#E69F00",
+          "Yellow": "#F0E442",
+          "Green": "#009E73",
+          "Blue": "#0072B2",
+          "White": "#B8B8B8",
+          "Teal": "#00A3B4",
+          "Pink": "#CC79A7"
+        },
+        "seedLabels": {
+          "Fi-1": "Rank 1",
+          "Fi-2": "Rank 2",
+          "Br-1": "Rank 3",
+          "Br-2": "Rank 4"
+        },
         "pairs": {
-          "1": { "full": "Men's High", "short": "MH" },
-          "2": { "full": "Mixed Doubles", "short": "XD" },
-          "3": { "full": "Women's Doubles", "short": "WD" },
-          "4": { "full": "Genderless", "short": "GD" }
+          "1": {
+            "full": "Men's High",
+            "short": "MH"
+          },
+          "2": {
+            "full": "Mixed Doubles",
+            "short": "XD"
+          },
+          "3": {
+            "full": "Women's Doubles",
+            "short": "WD"
+          },
+          "4": {
+            "full": "Genderless",
+            "short": "GD"
+          }
         }
       }
     },
@@ -255,15 +298,24 @@
         "acso-sportsfest-day1": {
           "label": "Nov 13",
           "date": "2026-11-13",
-          "isLive": "auto",
+          "isLive": true,
           "facilities": [
-            { "name": "Pickle Place", "sheetId": "18UH-CHx4_qIdI5y89qrSKDQR0Cd0dzKWQRQfKunNFjg" }
+            {
+              "name": "Pickle Place",
+              "sheetId": "18UH-CHx4_qIdI5y89qrSKDQR0Cd0dzKWQRQfKunNFjg"
+            }
           ]
         }
       },
       "display": {
-        "divisions": { "": "" },
-        "events": { "MD": "Men's Doubles", "WD": "Women's Doubles", "XD": "Mixed Doubles" }
+        "divisions": {
+          "": ""
+        },
+        "events": {
+          "MD": "Men's Doubles",
+          "WD": "Women's Doubles",
+          "XD": "Mixed Doubles"
+        }
       }
     }
   }
