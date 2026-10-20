@@ -245,6 +245,26 @@
           "4": { "full": "Genderless", "short": "GD" }
         }
       }
+    },
+    "acso-sportsfest-2026": {
+      "type": "standard",
+      "title": "Angeles City Employees Sportsfest Pickleball",
+      "attendance": "desks",
+      "scoreEntry": "console",
+      "days": {
+        "acso-sportsfest-day1": {
+          "label": "Nov 13",
+          "date": "2026-11-13",
+          "isLive": "auto",
+          "facilities": [
+            { "name": "Pickle Place", "sheetId": "18UH-CHx4_qIdI5y89qrSKDQR0Cd0dzKWQRQfKunNFjg" }
+          ]
+        }
+      },
+      "display": {
+        "divisions": { "": "" },
+        "events": { "MD": "Men's Doubles", "WD": "Women's Doubles", "XD": "Mixed Doubles" }
+      }
     }
   }
 }
