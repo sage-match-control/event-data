@@ -126,6 +126,21 @@ This file documents the schema itself.
   head-to-head wins and head-to-head points. Any other value reads as
   `"points"`, with a console warning on the page. The Hub, board and Control
   Center (including its Awards podium) read it; `sage-tools-api` does not.
+- `events.<event-key>.lineupRules` — optional, team events only: the rules a
+  lineup is checked against, as warnings in Control Center (never on the public
+  pages, and never blocking anything). `pairs` gives each pair number a kind:
+  `"mens-high"` (two men, at least one with a level in `advancedLevels`),
+  `"mixed"` (a man and a woman), `"womens"` (two women) or `"open"` (no
+  restriction). `advancedLevels` lists the roster levels that count as advanced,
+  compared case-insensitively; empty, the level isn't checked.
+  `captainNotMixed: true` keeps a team's captain, the **first player in its
+  roster**, out of the mixed pair. `allowed` lets named players into a kind
+  whatever its gender rule says: `{ "Gian": ["womens"] }` lets Gian, a man,
+  play Women's (and nothing else changes for him). Whatever the kinds, a player plays once per
+  round (matchup), and a full round leaves no rostered player out. Gender and
+  level come from the `Teams` tab; a check that needs one the roster doesn't
+  have is skipped. Example: `"lineupRules": { "pairs": { "1": "mens-high", "2": "mixed", "3": "womens", "4": "open" }, "advancedLevels": ["HA", "HI"], "captainNotMixed": true }`. Control Center reads it;
+  `sage-tools-api` does not.
 - `events.<event-key>.days.<day-key>` — one entry per tournament day.
   - `label` — required, shown in error messages and diagnostics.
   - `date` — optional (`YYYY-MM-DD`), console-only. Lets the console order

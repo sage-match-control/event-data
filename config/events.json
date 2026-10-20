@@ -218,6 +218,7 @@
       "type": "team",
       "title": "Millennium Pickleball Club",
       "teamScoring": "games",
+      "lineupRules": { "pairs": { "1": "mens-high", "2": "mixed", "3": "womens", "4": "open" }, "advancedLevels": ["H2A", "HI"], "captainNotMixed": true, "allowed": { "Gian": ["womens"] } },
       "attendance": "desks",
       "scoreEntry": "links",
       "days": {
@@ -234,24 +235,12 @@
         }
       },
       "display": {
-        "teamColors": { "Red": "#D55E00", "Orange": "#E69F00", "Yellow": "#F0E442", "Green": "#009E73", "Blue": "#0072B2", "Purple": "#6F3FA0", "Sky": "#56B4E9", "Pink": "#CC79A7" },
+        "teamColors": { "Red": "#D55E00", "Orange": "#E69F00", "Yellow": "#F0E442", "Green": "#009E73", "Blue": "#0072B2", "White": "#B8B8B8", "Teal": "#00A3B4", "Pink": "#CC79A7" },
         "pairs": {
-          "1": {
-            "full": "Men's Doubles",
-            "short": "MD"
-          },
-          "2": {
-            "full": "Men's Doubles",
-            "short": "MD"
-          },
-          "3": {
-            "full": "Women's Doubles",
-            "short": "WD"
-          },
-          "4": {
-            "full": "Mixed Doubles",
-            "short": "XD"
-          }
+          "1": { "full": "Men's High", "short": "MH" },
+          "2": { "full": "Mixed Doubles", "short": "XD" },
+          "3": { "full": "Women's Doubles", "short": "WD" },
+          "4": { "full": "Genderless", "short": "GD" }
         }
       }
     }
