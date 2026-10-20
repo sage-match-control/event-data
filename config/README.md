@@ -132,7 +132,9 @@ This file documents the schema itself.
   Center (including its Awards podium) read it; `sage-tools-api` does not.
 - `events.<event-key>.lineupReveal` — optional, team events only: `true` makes
   the public pages (the Hub and the schedule board) show a match's lineup only
-  once its row in the workbook's `CSV` tab has `lineupShown` ticked (`TRUE`);
+  once its row in the workbook's `CSV` tab has `lineupShown` `TRUE` (the
+  Millennium workbook fills it by formula from a **Show lineup** tick box per
+  matchup in its `MatchUps` tab);
   until then it reads as a lineup not set. Control Center always shows every
   lineup, with **Lineup hidden** on a matchup card whose lineup isn't shown yet.
   The lineups are still in the published data, so this controls what the pages
