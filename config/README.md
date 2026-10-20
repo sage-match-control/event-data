@@ -126,8 +126,10 @@ This file documents the schema itself.
 - `events.<event-key>.teamScoring` — optional, team events only: `"points"`
   (the default) or `"games"`. `"points"` decides a matchup on total points and
   ranks a bracket on points scored. `"games"` decides a matchup on matches won,
-  then total points, and ranks a bracket on matches won, total points,
-  head-to-head wins and head-to-head points. Any other value reads as
+  then total points, and ranks a bracket on matches won, then, for two teams
+  level, head-to-head wins and the head-to-head quotient, and for three or
+  more, the overall quotient (two still level going to the two-team rules); a
+  tie left after that reads **Tied** once the round robin is over. Any other value reads as
   `"points"`, with a console warning on the page. The Hub, board and Control
   Center (including its Awards podium) read it; `sage-tools-api` does not.
 - `events.<event-key>.lineupReveal` — optional, team events only: `true` makes
