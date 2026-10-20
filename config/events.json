@@ -218,6 +218,7 @@
       "type": "team",
       "title": "Millennium Pickleball Club 2nd Invitational Tournament",
       "teamScoring": "games",
+      "lineupReveal": true,
       "lineupRules": { "pairs": { "1": "mens-high", "2": "mixed", "3": "womens", "4": "open" }, "advancedLevels": ["H2A", "HI"], "captainNotMixed": true, "allowed": { "Gian": ["womens"] } },
       "attendance": "desks",
       "scoreEntry": "links",

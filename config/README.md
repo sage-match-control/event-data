@@ -130,6 +130,14 @@ This file documents the schema itself.
   head-to-head wins and head-to-head points. Any other value reads as
   `"points"`, with a console warning on the page. The Hub, board and Control
   Center (including its Awards podium) read it; `sage-tools-api` does not.
+- `events.<event-key>.lineupReveal` — optional, team events only: `true` makes
+  the public pages (the Hub and the schedule board) show a match's lineup only
+  once its row in the workbook's `CSV` tab has `lineupShown` ticked (`TRUE`);
+  until then it reads as a lineup not set. Control Center always shows every
+  lineup, with **Lineup hidden** on a matchup card whose lineup isn't shown yet.
+  The lineups are still in the published data, so this controls what the pages
+  show, not who can read the data. Absent or anything but `true`, every lineup
+  shows as soon as it is in.
 - `events.<event-key>.lineupRules` — optional, team events only: the rules a
   lineup is checked against, as warnings in Control Center (never on the public
   pages, and never blocking anything). `pairs` gives each pair number a kind:
