@@ -123,6 +123,19 @@ This file documents the schema itself.
     side shows until its team is typed in, `{ "<playoff side>": "<label>" }`
     (`"Br-1": "Rank 3"` reads "Rank 3 · TBD"). A side the map lacks reads
     "Seed <n> · TBD". The Hub, board and scorer page read it.
+    A **standard** event may add `playoffSeats`: the label a playoff seat shows in
+    the bracket chart while it is empty and the round robin is to fill it,
+    `{ "<category code or shape key>": { "<slot>": "<label>" } }`. The outer key
+    is a category code (`"HIMD"`, or `"MD"` in an event with no divisions) or a
+    shape key `<brackets>x<advance>` (`"3x2"`: three round robin brackets, the
+    top two of each advancing), which labels every category of that shape; a
+    category's own entry wins over its shape's, seat by seat. The slot is the
+    seat's code without its category (`SF_1`, `QF_4`, `R16_5`) and the label a
+    non-empty string (`"Bracket winner"`, `"Best runner-up"`). The site shows the
+    label as written and never works out who qualifies. A seat a match fills
+    reads "Winner of QF-2" instead, and a seat with no label reads "Qualifier".
+    Anything malformed is dropped with a console warning on the page. No event
+    needs it. Control Center and the Hub read it; `sage-tools-api` does not.
 - `events.<event-key>.teamScoring` — optional, team events only: `"points"`
   (the default) or `"games"`. `"points"` decides a matchup on total points and
   ranks a bracket on points scored. `"games"` decides a matchup on matches won,
