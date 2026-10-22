@@ -134,6 +134,10 @@ This file documents the schema itself.
     non-empty string (`"Bracket winner"`, `"Best runner-up"`). The site shows the
     label as written and never works out who qualifies. A seat a match fills
     reads "Winner of QF-2" instead, and a seat with no label reads "Qualifier".
+    A workbook made by the Standard Tournament Generator 1.4.0 (or given
+    **SAGE → Add bracket links**) labels its seats itself, in `STANDINGSCSV`'s
+    `seat` column, and that label wins over this one, so most events need no
+    `playoffSeats`: it is the fallback for a workbook without the column.
     Anything malformed is dropped with a console warning on the page. No event
     needs it. Control Center and the Hub read it; `sage-tools-api` does not.
 - `events.<event-key>.teamScoring` — optional, team events only: `"points"`
