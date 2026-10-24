@@ -226,10 +226,7 @@
           "3": "womens",
           "4": "open"
         },
-        "advancedLevels": [
-          "H2A",
-          "HI"
-        ],
+        "advancedLevels": [],
         "captainNotMixed": true,
         "allowed": {
           "Gian": [
@@ -271,8 +268,8 @@
         },
         "pairs": {
           "1": {
-            "full": "Men's High",
-            "short": "MH"
+            "full": "Men's Doubles",
+            "short": "MD"
           },
           "2": {
             "full": "Mixed Doubles",
