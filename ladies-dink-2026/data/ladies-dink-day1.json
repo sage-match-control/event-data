@@ -1,9 +1,9 @@
 {
   "day": "ladies-dink-day1",
   "label": "Nov 7",
-  "isLive": "auto",
+  "isLive": true,
   "generatedAt": "2026-10-31T15:39:14.911Z",
-  "publishedAt": "2026-10-31T15:39:15.692Z",
+  "publishedAt": "2026-10-31T15:49:27.414Z",
   "facilities": [
     {
       "name": "Pampanga Pickleball Center",
