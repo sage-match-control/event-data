@@ -314,6 +314,56 @@
           "XD": "Mixed Doubles"
         }
       }
+    },
+    "ladies-dink-2026": {
+      "type": "team",
+      "title": "Ladies' Dink 1st Club Tournament",
+      "teamScoring": "games",
+      "attendance": "desks",
+      "scoreEntry": "links",
+      "days": {
+        "ladies-dink-day1": {
+          "label": "Nov 7",
+          "date": "2026-11-07",
+          "isLive": "auto",
+          "facilities": [
+            {
+              "name": "Pampanga Pickleball Center",
+              "sheetId": "1CITP2HOs8Ix5m0qZbkM1GDbDaotWv17i046VeLip7RI"
+            }
+          ]
+        }
+      },
+      "display": {
+        "pairs": {
+          "1": {
+            "full": "Pair 1",
+            "short": "P1"
+          },
+          "2": {
+            "full": "Pair 2",
+            "short": "P2"
+          }
+        },
+        "seedLabels": {
+          "QF-1": "Bracket A #1",
+          "QF-2": "Bracket B #2",
+          "QF-3": "Bracket C #1",
+          "QF-4": "Bracket D #2",
+          "QF-5": "Bracket B #1",
+          "QF-6": "Bracket A #2",
+          "QF-7": "Bracket D #1",
+          "QF-8": "Bracket C #2",
+          "SF-1": "QF 1 winner",
+          "SF-2": "QF 2 winner",
+          "SF-3": "QF 3 winner",
+          "SF-4": "QF 4 winner",
+          "Br-1": "SF 1 loser",
+          "Br-2": "SF 2 loser",
+          "Fi-1": "SF 1 winner",
+          "Fi-2": "SF 2 winner"
+        }
+      }
     }
   }
 }
