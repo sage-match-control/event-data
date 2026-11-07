@@ -99,6 +99,7 @@
       }
     },
     "pnf-x-bup-dual-meet": {
+      "pagesArchived": true,
       "type": "dual-meet",
       "title": "PNF × BUP Dual Meet",
       "days": {
@@ -133,6 +134,7 @@
       }
     },
     "pickle-for-sight-2026": {
+      "pagesArchived": true,
       "type": "standard",
       "title": "Pickle for Sight",
       "days": {
@@ -166,6 +168,7 @@
       }
     },
     "pickledrive-anniversary-2026": {
+      "pagesArchived": true,
       "type": "team",
       "title": "PickleDrive Club One Year Celebration",
       "attendance": "desks",
@@ -185,6 +188,7 @@
       }
     },
     "piggleball-2026": {
+      "pagesArchived": true,
       "type": "standard",
       "title": "Piggleball Chairman's Cup",
       "attendance": "desks",
@@ -215,6 +219,7 @@
       }
     },
     "millennium-invitational-2026": {
+      "pagesArchived": true,
       "type": "team",
       "title": "Millennium Pickleball Club 2nd Invitational Tournament",
       "teamScoring": "games",
@@ -316,6 +321,7 @@
       }
     },
     "ladies-dink-2026": {
+      "pagesArchived": true,
       "type": "team",
       "title": "Ladies' Dink 1st Club Tournament",
       "teamScoring": "games",

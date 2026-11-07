@@ -94,6 +94,10 @@ This file documents the schema itself.
     engine shows it** (its Tournament Hub, schedule board, scorer page or
     desk page, which read it too): removing a finished event's entry blanks
     those pages. `archived` is how to hide a finished event from the console.
+  - `pagesArchived` — optional, console-only. `true` says the event's pages are
+    in the site's `events/archives/<event-key>/` rather than `events/<event-key>/`,
+    and Control Center's links and scorer-page check follow it. The event stays
+    in the picker; that is `archived`'s job.
   - `title` — optional. Shown as the console's masthead label once this event
     is selected.
   - `display` — optional: `{ divisions, events, clubs }`, each a plain
