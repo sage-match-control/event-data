@@ -140,6 +140,11 @@ This file documents the schema itself.
     `playoffSeats`: it is the fallback for a workbook without the column.
     Anything malformed is dropped with a console warning on the page. No event
     needs it. Control Center and the Hub read it; `sage-tools-api` does not.
+- `events.<event-key>.headToHeadQuotient` — optional, for a team event with
+  `teamScoring: "games"`: `false` sends two teams level on wins and at 1–1
+  head-to-head straight to **Tied**, skipping the head-to-head quotient. Any other
+  value, or none, keeps the quotient. The Hub and Control Center read it;
+  `sage-tools-api` does not.
 - `events.<event-key>.teamScoring` — optional, team events only: `"points"`
   (the default) or `"games"`. `"points"` decides a matchup on total points and
   ranks a bracket on points scored. `"games"` decides a matchup on matches won,

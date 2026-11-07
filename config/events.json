@@ -319,6 +319,7 @@
       "type": "team",
       "title": "Ladies' Dink 1st Club Tournament",
       "teamScoring": "games",
+      "headToHeadQuotient": false,
       "attendance": "desks",
       "scoreEntry": "links",
       "days": {
