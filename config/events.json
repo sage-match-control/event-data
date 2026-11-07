@@ -320,6 +320,13 @@
       "title": "Ladies' Dink 1st Club Tournament",
       "teamScoring": "games",
       "headToHeadQuotient": false,
+      "lineupReveal": true,
+      "lineupRules": {
+        "pairs": {
+          "1": "open",
+          "2": "open"
+        }
+      },
       "attendance": "desks",
       "scoreEntry": "links",
       "days": {

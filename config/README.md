@@ -175,7 +175,7 @@ This file documents the schema itself.
   roster**, out of the mixed pair. `allowed` lets named players into a kind
   whatever its gender rule says: `{ "Gian": ["womens"] }` lets Gian, a man,
   play Women's (and nothing else changes for him). Whatever the kinds, a player plays once per
-  round (matchup), and a full round leaves no rostered player out. Gender and
+  round (matchup), a tiebreaker game not counting, and a full round leaves no rostered player out. Gender and
   level come from the `Teams` tab; a check that needs one the roster doesn't
   have is skipped. Example: `"lineupRules": { "pairs": { "1": "mens-high", "2": "mixed", "3": "womens", "4": "open" }, "advancedLevels": ["HA", "HI"], "captainNotMixed": true }`. Control Center reads it;
   `sage-tools-api` does not.
