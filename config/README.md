@@ -64,13 +64,16 @@ This file documents the schema itself.
 - `events.<event-key>` — one entry per event. The key must match this
   event's folder name under `events/` in `sage-match-control.github.io` **and**
   its folder name in this repo (`<event-key>/data/...`).
-  - `type` — `"dual-meet"`, `"standard"` or `"team"`. Read only by Control Center
-    (`tools/control-center.html`) — `sage-tools-api` never looks at
-    it. Picks both the standings layout and how team codes split
-    (`<CLUB>_<DIV><EVT>_<REST>` vs `<DIV><EVT>_<REST>`). Not validated here
-    (the console shows its own visible error for a missing/unrecognized
-    value rather than guessing) — see
-    `sage-docs/docs/specs/.../match-control-console-spec.md`.
+  - `type` — `"dual-meet"`, `"standard"` or `"team"`. Read by every page built on
+    the site engine (Control Center, the Tournament Hub, the schedule board, the
+    scorer page and the desk page). Picks both the standings layout and how team
+    codes split (`<CLUB>_<DIV><EVT>_<REST>` vs `<DIV><EVT>_<REST>`). Not validated
+    here (Control Center and the Hub show their own visible error for a
+    missing/unrecognized value rather than guessing) — see
+    `sage-docs/docs/specs/.../match-control-console-spec.md`. `sage-tools-api`
+    reads it too: a `"team"` day publishes its roster tab (`rosterSheetName`,
+    below), and attendance takes a team event's roster from `Teams` and every
+    other type's from `STANDINGSCSV`.
   - A `"team"` event takes its team names from `STANDINGSCSV` and needs no
     `display` block.
   - `attendance` — optional, `"console"` or `"desks"`. Turns on staff attendance for the event:
@@ -79,8 +82,9 @@ This file documents the schema itself.
     validation in `sage-tools-api`. Absent means no attendance.
   - `scoreEntry` — optional, `"console"` or `"links"`. Turns on entering a match's
     score from Control Center and the API: `"console"` lets signed-in operators
-    do it in Match Finder, `"links"` also allows scorer links (issued for a day until
-    06:00 Manila the morning after its `date`; a day without a `date` is never
+    do it in Match Finder, `"links"` also allows scorer links. A scorer link is for
+    one day and lasts 24 hours from when it is issued; none can be issued from 06:00
+    Manila the morning after the day's `date` (a day without a `date` is never
     over). Absent
     means off; anything else fails validation in `sage-tools-api`. Mission
     Control's **Scorer links** switch moves an event between `"links"` and
@@ -88,8 +92,10 @@ This file documents the schema itself.
     adding the setting is a commit here. Every facility workbook of the event
     must be shared with the API's service account as **Editor**, or saving a
     score fails with a message naming the account.
-  - `archived` — optional, console-only. `true` hides the event from the
-    console's event picker entirely. Omit or set `false` for a live event.
+  - `archived` — optional. `true` hides the event from the console's event
+    picker entirely, and `sage-tools-api` treats its score entry as off (a score
+    save, a scorer link and the Accepting / Stopped switch are refused). Omit or
+    set `false` for a live event.
     **An event stays in this file for as long as any page built on the site
     engine shows it** (its Tournament Hub, schedule board, scorer page or
     desk page, which read it too): removing a finished event's entry blanks
@@ -185,13 +191,17 @@ This file documents the schema itself.
   `sage-tools-api` does not.
 - `events.<event-key>.days.<day-key>` — one entry per tournament day.
   - `label` — required, shown in error messages and diagnostics.
-  - `date` — optional (`YYYY-MM-DD`), console-only. Lets the console order
-    days chronologically and default to the current one.
+  - `date` — optional (`YYYY-MM-DD`). Orders the event's days, and lets the
+    console default to the current one. The Hub's `"auto"` go-live and the
+    facility progress estimate need it, a desk link lasts to the end of it,
+    and a scorer link can't be issued after 06:00 Manila the morning after it.
   - `isLive` — optional, one of `true`, `false`, or the literal string
     `"auto"`. Any other value fails validation the same as a structural
     error (whole file rejected, last-known-good config kept serving). Absent
     is treated the same as `"auto"`. This is Control Center's
-    go-live override (`POST /sync/:day/live`, secret-gated): every sync
+    go-live override (`PUT /v3/days/{day}/visibility`, legacy
+    `POST /sync/:day/live`; an operator's token only, never the sync
+    secret): every sync
     stamps the day's current value into its published snapshot alongside
     `label`, and the override endpoint writes here first, then immediately
     republishes that snapshot — so a later real sync can never silently
@@ -247,23 +257,24 @@ broken commit or crashing:
 - Facility names must be unique within a day.
 - The file needs at least one event, and each event needs at least one day.
 
-If you're unsure whether an edit is valid before committing it, ask
-whoever's driving `sage-tools-api` to check `GET /sync/config` (with the
-`X-Sync-Secret` header) after your commit — it reports which config
+If you're unsure whether an edit is valid before committing it, check
+Control Center's **Check connection** after your commit, or ask whoever's
+driving `sage-tools-api` to check `GET /v3/diagnostics/sync` (with the
+`X-Sync-Secret` header) — it reports which config
 revision is actually live, including whether the service fell back to its
 bundled seed because your commit failed validation.
 
 ## Sheet IDs are effectively public
 
 This repo is public (GitHub Pages requires it on a free plan), so this file
-publishes the list of every facility spreadsheet's ID. That's expected —
-sheet IDs aren't secrets, the sheets are already shared "anyone with the
-link can view" by design, and the published match/standings snapshots
-already contain everything on their SCHEDULE/COURT CONTROL tabs. But it does
-make the *set* of spreadsheets enumerable. Two things follow from that:
+publishes the list of every facility spreadsheet's ID. An ID alone opens
+nothing: a facility workbook's **General access** is **Restricted**, shared by
+name with its staff and with `sage-tools-api`'s service account, which is how
+the API reads it. The published match/standings snapshots already contain
+everything on the synced tabs. Two things follow:
 
-- Only put IDs of spreadsheets that are already link-shareable and meant to
-  be public.
-- Don't keep private organizer notes in an extra tab of a spreadsheet that's
-  registered here — anyone who finds the sheet ID can open the whole
-  spreadsheet, not just the CSV/STANDINGSCSV tabs this file names.
+- Set every registered workbook to Restricted. One left as *Anyone with the
+  link* (an older event's) is open to anyone who reads its ID here.
+- Don't keep private organizer notes in an extra tab of a workbook that is
+  still link-shared — anyone who finds its ID can open the whole spreadsheet,
+  not just the CSV/STANDINGSCSV tabs this file names.
