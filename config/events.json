@@ -378,6 +378,39 @@
           "Fi-2": "SF 2 winner"
         }
       }
+    },
+    "upap-2026": {
+      "type": "standard",
+      "title": "UPAP 3rd Annual Tournament",
+      "attendance": "desks",
+      "scoreEntry": "console",
+      "days": {
+        "upap-day1": {
+          "label": "Nov 22",
+          "date": "2026-11-22",
+          "isLive": "auto",
+          "facilities": [
+            {
+              "name": "The Foundry",
+              "sheetId": "1CS7oCb748BYnqzNSB5Dmeb_pYvAMBLNk7E7iZ8SavJs"
+            }
+          ]
+        }
+      },
+      "display": {
+        "divisions": {
+          "B45L": "Below 45 (DUPR ≤3.25)",
+          "B45H": "Below 45 (DUPR 3.26+)",
+          "O": "Open",
+          "A45L": "45+ (DUPR ≤3.25)",
+          "A45H": "45+ (DUPR 3.26+)"
+        },
+        "events": {
+          "MD": "Men's Doubles",
+          "WD": "Women's Doubles",
+          "XD": "Mixed Doubles"
+        }
+      }
     }
   }
 }
