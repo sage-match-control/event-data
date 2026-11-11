@@ -388,7 +388,7 @@
         "upap-day1": {
           "label": "Nov 22",
           "date": "2026-11-22",
-          "isLive": true,
+          "isLive": "auto",
           "facilities": [
             {
               "name": "The Foundry",
