@@ -1,9 +1,9 @@
 {
   "day": "upap-day1",
   "label": "Nov 22",
-  "isLive": "auto",
+  "isLive": true,
   "generatedAt": "2026-11-11T16:38:52.981Z",
-  "publishedAt": "2026-11-11T16:38:53.695Z",
+  "publishedAt": "2026-11-11T19:06:57.437Z",
   "facilities": [
     {
       "name": "The Foundry",
