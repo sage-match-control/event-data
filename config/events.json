@@ -384,6 +384,11 @@
       "title": "UPAP 3rd Annual Tournament",
       "attendance": "desks",
       "scoreEntry": "console",
+      "scoring": {
+        "to": 11,
+        "winBy": 1,
+        "podiumWinBy": 2
+      },
       "days": {
         "upap-day1": {
           "label": "Nov 22",

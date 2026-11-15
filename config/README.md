@@ -150,6 +150,15 @@ This file documents the schema itself.
     `playoffSeats`: it is the fallback for a workbook without the column.
     Anything malformed is dropped with a console warning on the page. No event
     needs it. Control Center and the Hub read it; `sage-tools-api` does not.
+- `events.<event-key>.scoring` — optional: the game's own rule, for the score
+  dialog's warnings in Control Center and the scorer page.
+  `{ "to": 11, "winBy": 1, "podiumWinBy": 2 }`: `to` is the points a game is
+  played to (default 11); `winBy` is `1` (the game ends when a side reaches
+  `to`) or `2` (from `to - 1` all, play goes on until a side leads by 2, with
+  no cap); `podiumWinBy` is the same for the final and the bronze match
+  (default: `winBy`). Without it the dialog warns as for a game to 11, win by
+  2. Anything malformed is ignored with a console warning on the page. The
+  warnings never stop a save. `sage-tools-api` does not read it.
 - `events.<event-key>.headToHeadQuotient` — optional, for a team event with
   `teamScoring: "games"`: `false` sends two teams level on wins and at 1–1
   head-to-head straight to **Tied**, skipping the head-to-head quotient. Any other
