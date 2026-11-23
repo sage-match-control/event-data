@@ -416,6 +416,54 @@
           "XD": "Mixed Doubles"
         }
       }
+    },
+    "generation-cup-2026": {
+      "type": "standard",
+      "title": "The Ultimate Generation Cup 2026",
+      "attendance": "desks",
+      "scoreEntry": "console",
+      "scoring": {
+        "to": 11,
+        "winBy": 1
+      },
+      "days": {
+        "generation-cup-day1": {
+          "label": "Nov 28 · Next Gen",
+          "date": "2026-11-28",
+          "isLive": "auto",
+          "facilities": [
+            {
+              "name": "Kingcourts",
+              "sheetId": "1WQ2sksqI-xoRulvkCoUHYIhCxAmBDSbGnJhRbzGqU0k"
+            }
+          ]
+        },
+        "generation-cup-day2": {
+          "label": "Nov 29 · Gen X",
+          "date": "2026-11-29",
+          "isLive": "auto",
+          "facilities": [
+            {
+              "name": "Kingcourts",
+              "sheetId": "1fe5mzoPO2XoeBS54TZLjq3I8GZ0lIOS2Sss76O9RhY8"
+            }
+          ]
+        }
+      },
+      "display": {
+        "divisions": {
+          "N": "Novice",
+          "LI": "Low Intermediate",
+          "HI": "High Intermediate",
+          "A": "Advanced",
+          "O": "Open"
+        },
+        "events": {
+          "MD": "Men's Doubles",
+          "WD": "Women's Doubles",
+          "XD": "Mixed Doubles"
+        }
+      }
     }
   }
 }
