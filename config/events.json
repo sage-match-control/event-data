@@ -454,6 +454,7 @@
         "divisions": {
           "N": "Novice",
           "LI": "Low Intermediate",
+          "I": "Intermediate",
           "HI": "High Intermediate",
           "A": "Advanced",
           "O": "Open"
