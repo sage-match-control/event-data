@@ -1,9 +1,9 @@
 {
   "day": "generation-cup-day2",
   "label": "Nov 29 · Gen X",
-  "isLive": "auto",
+  "isLive": true,
   "generatedAt": "2026-11-24T13:31:04.122Z",
-  "publishedAt": "2026-11-24T13:31:04.422Z",
+  "publishedAt": "2026-11-24T13:45:56.763Z",
   "facilities": [
     {
       "name": "Kingcourts",
