@@ -441,7 +441,7 @@
         "generation-cup-day2": {
           "label": "Nov 29 · Gen X",
           "date": "2026-11-29",
-          "isLive": "auto",
+          "isLive": true,
           "facilities": [
             {
               "name": "Kingcourts",
