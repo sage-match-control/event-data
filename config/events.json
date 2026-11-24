@@ -430,7 +430,7 @@
         "generation-cup-day1": {
           "label": "Nov 28 · Next Gen",
           "date": "2026-11-28",
-          "isLive": "auto",
+          "isLive": true,
           "facilities": [
             {
               "name": "Kingcourts",
